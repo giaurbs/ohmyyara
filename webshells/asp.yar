@@ -4,6 +4,7 @@ rule simple_asp_execution_shell
         description = "Siple detection for ASP Web Shell"
     strings:
         $a = "objshell.exec" nocase
+        $b = "Webshell"
     condition:
-        $a
+        $a or $b
 }
