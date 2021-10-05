@@ -1,10 +1,10 @@
-rule simple_asp_execution_shell
-{
+rule trivial_asp_shell {
     meta:
-        description = "Siple detection for ASP Web Shell"
+        description = "Trivial check for ASP Shell"
+
     strings:
-        $a = "objshell.exec" nocase
-        $b = "Webshell"
+        $shell_exec = "objshell.exec"
+
     condition:
-        $a or $b
+        all of them
 }
