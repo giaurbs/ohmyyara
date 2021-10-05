@@ -1,8 +1,9 @@
-rule SimpleExecutionCommand
+rule simple_asp_execution_shell
 {
+    meta:
+        description = "Siple detection for ASP Web Shell"
     strings:
-       $exec_command = "objshell.exec" nocase
-
+        $a = "objshell.exec" nocase
     condition:
-       $exec_command
+        $a
 }
